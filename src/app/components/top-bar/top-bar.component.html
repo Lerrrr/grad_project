@@ -1,0 +1,55 @@
+<div class="top-bar">
+    <div class="top-bar_big-piece"></div>
+        <div class="top-bar_big-piece_button"></div>
+        <div class="top-bar_big-piece_img">
+            <img src="https://www.flaticon.com/svg/static/icons/svg/2119/2119031.svg" width="35">
+        
+          </div>
+        
+
+ <!-- LOGO -->
+    <div class="top-bar_logo">
+        
+    </div>
+
+ <!-- SEARCH -->
+    <div class="top-bar_search">
+        <nz-input-group [nzSuffix]="suffixIconSearch">
+            <input type="text" nz-input placeholder=" Search" />
+          </nz-input-group>
+          <ng-template #suffixIconSearch>
+            <i nz-icon nzType="search"></i>
+          </ng-template>
+    </div>
+
+ <!-- BUTTON -->
+    <div class="top-bar_registr">
+        <button nz-button nzType="primary">LOG IN</button>
+        <button nz-button nzType="default" (click)="signUpClick.emit()">SIGN UP</button>
+    </div>
+
+  <!-- DROPDOWN -->
+    <div class="top-bar_dropdown">
+        
+        <a nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu">
+                      <i nz-icon nzType="user" nzTheme="outline"></i>
+            <i nz-icon nzType="down"></i>
+        </a>
+          <nz-dropdown-menu #menu="nzDropdownMenu">
+            <ul nz-menu>
+              <li nz-menu-item >1st menu item </li>
+              <li nz-menu-item>2nd menu item</li>
+              <li nz-menu-item>disabled menu item</li>
+              <li nz-menu-item><i nz-icon nzType="question-circle" nzTheme="outline"></i>Help</li>
+              <li nz-menu-divider></li>
+              <li nz-menu-item> <i nz-icon nzType="login" nzTheme="outline"></i>Log In / Sign Up</li>
+            </ul>
+          </nz-dropdown-menu>
+        </div>
+        
+</div>
+
+
+
+
+
