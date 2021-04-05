@@ -11,13 +11,13 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 
 import { IconDefinition } from '@ant-design/icons-angular';
 import { NZ_ICONS } from 'ng-zorro-antd/icon';
-import { TrendingCardsComponent } from './trending-cards/trending-cards.component';
+import { TrendingCardComponent } from './trending-card/trending-card.component';
 
 @NgModule({
     declarations: [
       PopularPostsComponent,
       TopBarComponent,
-      TrendingCardsComponent
+      TrendingCardComponent
       
     ],
     imports: [
@@ -32,7 +32,7 @@ import { TrendingCardsComponent } from './trending-cards/trending-cards.componen
     exports:[
       PopularPostsComponent,
       TopBarComponent,
-      TrendingCardsComponent      
+      TrendingCardComponent      
     ]
   })
 
