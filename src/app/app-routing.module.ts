@@ -21,6 +21,13 @@ const routes: Routes = [
         import('./pages/news/news.module').then(
           (m) => m.NewsModule
         ),
+    },
+    {
+      path: 'profile',
+      loadChildren: () =>
+        import('./pages/profile/profile.module').then(
+          (m) => m.ProfileModule
+        ),  
     }
   ];
 

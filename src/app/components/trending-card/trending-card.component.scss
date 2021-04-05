@@ -1,0 +1,89 @@
+*{
+  display: flex;
+}
+.card-body{
+  align-items: center;
+  width: 20%; 
+  height: 26vh;
+  // margin: 40px 0 0 150px;
+  border: 1px; 
+  border-radius: 8px;
+
+    }
+
+  h1{
+    color: whitesmoke; 
+    // position: absolute;
+    top: 120px;
+    width: 20px;
+    font-size: 30px;
+    text-align: center;
+    margin-left: 10px;
+
+    }
+
+    p{
+      color:whitesmoke;
+      position: absolute;
+      top: 150px;
+      margin-left: 10px;
+      font-size: 14px;
+    }
+
+    h2{
+      align-items: flex-end;
+      color: azure;
+      font-size: 12px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+  
+    }
+  
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// p {
+//     margin: 4;
+//   }
+// div{
+
+//   margin: auto;
+//   padding: 16px 24px 0;
+//   max-width: 1020px;
+  
+// }
