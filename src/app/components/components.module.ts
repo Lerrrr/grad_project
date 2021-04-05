@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { PopularPostsComponent } from './popular-posts/popular-posts.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
-import { NzInputModule } from 'ng-zorro-antd/input';  
+import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -14,13 +14,12 @@ import { NZ_ICONS } from 'ng-zorro-antd/icon';
 import { TrendingCardComponent } from './trending-card/trending-card.component';
 
 @NgModule({
-    declarations: [
-      PopularPostsComponent,
-      TopBarComponent,
-      TrendingCardComponent
-      
-    ],
-    imports: [
+  declarations: [
+    PopularPostsComponent,
+    TopBarComponent,
+    TrendingCardComponent
+  ],
+  imports: [
     CommonModule,
     NzButtonModule,
     NzInputModule,
@@ -28,12 +27,12 @@ import { TrendingCardComponent } from './trending-card/trending-card.component';
     NzIconModule,
     NzCardModule,
     NzGridModule,
-    ],
-    exports:[
-      PopularPostsComponent,
-      TopBarComponent,
-      TrendingCardComponent      
-    ]
-  })
+  ],
+  exports: [
+    PopularPostsComponent,
+    TopBarComponent,
+    TrendingCardComponent
+  ]
+})
 
-  export class ComponentsModule { }
+export class ComponentsModule { }

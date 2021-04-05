@@ -1,11 +1,6 @@
 <app-top-bar (signUpClick)="goToSignUp()"></app-top-bar>
-<app-trending-card
-  *ngFor="let card of cards"
-  [title]="card.title"
-  [description]="card.description"
-  [source]="card.source"
-  [bgImage]="card.bgImage"
-></app-trending-card>
+<app-trending-card *ngFor="let card of cards" [title]="card.title" [description]="card.description"
+  [source]="card.source" [bgImage]="card.bgImage"></app-trending-card>
 <app-popular-posts></app-popular-posts>
 <router-outlet></router-outlet>
 <!-- [title]="'test'"
