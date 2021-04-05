@@ -6,7 +6,6 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./trending-card.component.scss']
 })
 export class TrendingCardComponent implements OnInit {
-
   @Input() bgImage
   @Input() title
   @Input() description
