@@ -17,20 +17,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { NewsModule } from './pages/news/news.module';
 
 
-
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition;
 };
 const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesignIcons[key])
 
-
 // const icons: IconDefinition[] = [ DownloadOutline ];
-
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule, 
+    BrowserModule,
     CommonModule,
     NzButtonModule,
     NzInputModule,
@@ -42,7 +39,6 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     NewsModule,
     BrowserModule,
     BrowserAnimationsModule
-
   ],
   providers: [{ provide: NZ_ICONS, useValue: icons }],
   bootstrap: [AppComponent]
