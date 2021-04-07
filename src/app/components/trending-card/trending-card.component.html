@@ -1,56 +1,21 @@
-<div class="card-body" [ngStyle]="{ backgroundImage: 'url('+bgImage+')' }">
-  
-    <h1>{{ title }}</h1>
-    <p>{{ description }}</p> 
-  <div class="user">   
-     <h2>{{ source.avatar }}
-        {{ source.name }}
-    </h2>
-   </div>
-           
-</div>
+<section class="card-folder">
+  <a href="#" class="card">
+    <div
+      class="card-body"
+      [ngStyle]="{ backgroundImage: 'url(' + bgImage + ')' }"
+    >
+      <h1 class="card_title">{{ title }}</h1>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div>
-  <div nz-row [nzGutter]="6">
-    <div nz-col [nzSpan]="6">
-      <nz-card nzTitle="Card title1">
-        <p>Card content</p>
-      </nz-card>
+      <p class="card_description">{{ description }}</p>
+      <div class="card__user">
+        <img
+          class="card__user_avatar"
+          src="{{ source.avatar }}"
+          width="25"
+          height="25"
+        />
+        <p class="card__user_name">{{ source.name }}</p>
+      </div>
     </div>
-    <div nz-col [nzSpan]="6">
-      <nz-card nzTitle="Card title2">
-        <p>Card content</p>
-      </nz-card>
-    </div>
-    <div nz-col [nzSpan]="6">
-      <nz-card nzTitle="Card title3">
-        <p>Card content</p>
-      </nz-card>
-    </div>
-    <div nz-col [nzSpan]="6">
-      <nz-card nzTitle="Card title4">
-        <p>Card content</p>
-      </nz-card>
-    </div>
-  </div>
-</div> -->
+  </a>
+</section>

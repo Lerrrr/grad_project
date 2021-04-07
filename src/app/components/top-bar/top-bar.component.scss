@@ -1,54 +1,41 @@
+.top-bar {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  height: 3em;
+  background-color: aliceblue;
+  
 
-.top-bar{
-    position: relative;
+  &_big-piece_img {
     display: flex;
-    justify-content: flex-start;
-    width: 100%;
-    // height: 200vh;
-    background-color: aliceblue;
-    padding: 0px 40px;
-    top: 0;
-   
+    align-items: center;
+    margin-left: 4em;
+  }
 
-    &_big-piece_img{
-        width: 5%;
-        padding: 5px 0px 0px 0px;
-        margin-left: 0px;
-        margin-right: 70px;
-       
-       
-    }
-
-    &_search {
-        width: 60%;
-        padding: 7px 10px ;
-       
-        
-    }
-
-    &_registr{
-        width: 20%;
-        padding: 7px 0px;
-      
-
-    }
-    &_registr :first-child{
-        margin-right: 20px;
-        margin-left: 40px;
-      ;
-        
-    }
-
-
-    &_dropdown{
-        margin: 0px 0px 0px 8px;
-        padding: 7px 0px ;
-        
-        
-    }
+  &_search {
+    display: flex;
+    flex-direction: inherit;
+    align-items: center;
+    width: 60%;
+    margin-left: 8em;
+    margin-right: 6em;
     
+  }
 
+  &_registr {
+    display: flex;
+    align-items: center;
     
+    
+  }
+  &_registr :first-child {
+    display: flex;
+    align-items: center;
+  }
 
-
+  &_dropdown {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+  }
 }

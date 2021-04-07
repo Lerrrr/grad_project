@@ -10,11 +10,11 @@ import { Router } from '@angular/router';
 export class AppComponent {
   cards = [{
     bgImage: 'https://wallpapershome.ru/images/pages/pic_h/6592.jpg',
-    title:'test',
-    description:'123',
+    title:'Test',
+    description:'Some of description Some of description Some of description Some of description Some of description',
     source:{
       avatar: 'https://www.1obl.ru/upload/medialibrary/04b/04b0534e588d53ba4aaf7f9edc00cbc2.png',
-      name: 'lera'
+      name: 'Lera'
     }
   }]
   constructor(private router:Router) {

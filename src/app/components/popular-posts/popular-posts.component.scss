@@ -1,0 +1,57 @@
+.popular-post-card {
+    display: flex;
+    flex-direction: row;
+  
+    &vote-column {
+  
+    }
+  
+    &_wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    &top-bar {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+  
+      &user {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+  
+        &_avatar {
+        }
+  
+        &_name {
+  
+        }
+      }
+  
+      &_button {
+  
+      }
+    }
+  
+    &body {
+      &_title {
+  
+      }
+  
+      &_description {
+  
+      }
+    }
+  
+    &__footer {
+      &_comment-button {
+  
+      }
+  
+      &_share-button {
+  
+      }
+    }
+  }
