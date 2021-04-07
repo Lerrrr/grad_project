@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './popular-posts.component.html',
   styleUrls: ['./popular-posts.component.scss']
 })
+
 export class PopularPostsComponent implements OnInit {
 
   constructor() { }
