@@ -8,47 +8,31 @@
     background-color: aliceblue;
     padding: 0px 40px;
     top: 0;
-   
 
     &_big-piece_img{
         width: 5%;
         padding: 5px 0px 0px 0px;
         margin-left: 0px;
-        margin-right: 70px;
-       
-       
+        margin-right: 70px;      
     }
 
     &_search {
         width: 60%;
-        padding: 7px 10px ;
-       
-        
+        padding: 7px 10px;
     }
 
-    &_registr{
+    &_register{
         width: 20%;
-        padding: 7px 0px;
-      
-
+        padding: 7px 0px;     
     }
-    &_registr :first-child{
+
+    &_register :first-child{
         margin-right: 20px;
-        margin-left: 40px;
-      ;
-        
+        margin-left: 40px;        
     }
-
 
     &_dropdown{
         margin: 0px 0px 0px 8px;
-        padding: 7px 0px ;
-        
-        
-    }
-    
-
-    
-
-
+        padding: 7px 0px;   
+    } 
 }

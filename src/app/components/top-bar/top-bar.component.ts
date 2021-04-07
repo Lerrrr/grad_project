@@ -1,6 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
-
 @Component({
   selector: 'app-top-bar',
   templateUrl: './top-bar.component.html',
@@ -14,5 +13,4 @@ export class TopBarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
