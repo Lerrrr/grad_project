@@ -3,13 +3,16 @@
   flex-direction: row;
   width: auto;
   height: 3em;
-  background-color: aliceblue;
-  
+  background-color: cornsilk;
 
   &_big-piece_img {
     display: flex;
     align-items: center;
-    margin-left: 4em;
+    margin-left: 1em;
+
+    img {
+      border-radius: 4em;
+    }
   }
 
   &_search {
@@ -19,16 +22,17 @@
     width: 60%;
     margin-left: 8em;
     margin-right: 6em;
-    
   }
 
-  &_registr {
+  &_register {
     display: flex;
     align-items: center;
-    
-    
+    button {
+      margin-right: 1em;
+      
+    }
   }
-  &_registr :first-child {
+  &_register :first-child {
     display: flex;
     align-items: center;
   }

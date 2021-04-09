@@ -1,23 +1,26 @@
 .popular-post-card {
     display: flex;
-    flex-direction: row;
-  
-    &vote-column {
-  
+    flex-direction: row;  
+    
+
+    &_vote-column {
+      display: flex;
+      flex-direction: column;
     }
   
     &_wrapper {
       display: flex;
       flex-direction: column;
+  
     }
   
-    &top-bar {
+    &_top-bar {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
   
-      &user {
+      &_user {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -35,7 +38,7 @@
       }
     }
   
-    &body {
+    &_body {
       &_title {
   
       }

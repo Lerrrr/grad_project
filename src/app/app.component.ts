@@ -16,7 +16,10 @@ export class AppComponent {
       name: 'Lera'
     }
   }];
-
+  
+ 
+   
+  
   constructor(private router: Router) {
   }
   goToSignUp() {
