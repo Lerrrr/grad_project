@@ -5,6 +5,7 @@ import { Component, OnInit, Input} from '@angular/core';
   templateUrl: './popular-posts.component.html',
   styleUrls: ['./popular-posts.component.scss']
 })
+
 export class PopularPostsComponent implements OnInit {
 
   

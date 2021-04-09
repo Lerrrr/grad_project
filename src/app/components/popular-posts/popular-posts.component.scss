@@ -1,4 +1,5 @@
 .popular-post-card {
+<<<<<<< HEAD
     display: flex;
     flex-direction: row;  
     
@@ -56,5 +57,38 @@
       &_share-button {
   
       }
-    }
+=======
+  display       : flex;
+  flex-direction: row;
+
+  // TODO: vote-column
+
+  &_wrapper {
+    display       : flex;
+    flex-direction: column;
   }
+
+  &top-bar {
+    display        : flex;
+    flex-direction : row;
+    justify-content: space-between;
+    align-items    : center;
+
+    &user {
+      display       : flex;
+      flex-direction: row;
+      align-items   : center;
+
+      // TODO: avatar
+
+      // TODO: name
+>>>>>>> f0bbd96ec3414fed41d2e72305fe3601912adf9f
+    }
+
+    // TODO: button
+  }
+
+  // TODO: body
+
+  // TODO: footer
+}

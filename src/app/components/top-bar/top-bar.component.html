@@ -1,4 +1,5 @@
 <div class="top-bar">
+
   <!-- LOGO -->
   <div class="top-bar_big-piece_img">
     <img
@@ -11,14 +12,20 @@
     <nz-input-group [nzSuffix]="suffixIconSearch">
       <input type="text" nz-input placeholder=" Search" />
     </nz-input-group>
+
     <ng-template #suffixIconSearch>
       <i nz-icon nzType="search"></i>
     </ng-template>
   </div>
 
+<<<<<<< HEAD
   <!-- BUTTON -->
 
   <div class="top-bar_register">
+=======
+  <div class="top-bar_register">
+    <!-- BUTTONS -->
+>>>>>>> f0bbd96ec3414fed41d2e72305fe3601912adf9f
     <button nz-button nzType="primary"> LOG IN </button>
     <button nz-button nzType="default" (click)="signUpClick.emit()"> SIGN UP </button>
 
@@ -28,16 +35,23 @@
         <i nz-icon nzType="user" nzTheme="outline"></i>
         <i nz-icon nzType="caret-down" nzTheme="outline"></i>
       </a>
+      
       <nz-dropdown-menu #menu="nzDropdownMenu">
         <ul nz-menu>
           <li nz-menu-item> 1st menu item </li>
           <li nz-menu-item> 2nd menu item </li>
           <li nz-menu-item> disabled menu item </li>
+<<<<<<< HEAD
           <li nz-menu-item>
           <i nz-icon nzType="question-circle" nzTheme="outline"></i> Help </li>
           <li nz-menu-divider></li>
           <li nz-menu-item>
             <i nz-icon nzType="login" nzTheme="outline"></i> Log In / Sign Up </li>
+=======
+          <li nz-menu-item> <i nz-icon nzType="question-circle" nzTheme="outline"></i> Help </li>
+          <li nz-menu-divider></li>
+          <li nz-menu-item> <i nz-icon nzType="login" nzTheme="outline"></i> Log In / Sign Up </li>
+>>>>>>> f0bbd96ec3414fed41d2e72305fe3601912adf9f
         </ul>
       </nz-dropdown-menu>
     </div>

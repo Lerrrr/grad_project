@@ -6,31 +6,42 @@
 
   .card {
     width: 25%;
+
     &_description {
+<<<<<<< HEAD
       color    : whitesmoke;
       width    : 100%;
       height: 30%;
       font-size:14px;
       overflow      : hidden;
       text-overflow : ellipsis;
+=======
+      color        : whitesmoke;
+      width        : 100%;
+      height       : 30%;
+      font-size    : 14px;
+      overflow     : hidden;
+      text-overflow: ellipsis;
+>>>>>>> f0bbd96ec3414fed41d2e72305fe3601912adf9f
     }
 
     &__user {
-      display: flex;
+      display       : flex;
       flex-direction: row;
-      align-items: center;
+      align-items   : center;
 
-      &_avatar{
+      &_avatar {
         border-radius: 25px;
       }
-      &_name{
-        color         : azure;
-        font-size     : 12px; 
+
+      &_name {
+        color        : azure;
+        font-size    : 12px;
         margin-bottom: 0;
-        margin-left: 8px;
-        overflow      : hidden;
-        text-overflow : ellipsis;
-        white-space   : nowrap;
+        margin-left  : 8px;
+        overflow     : hidden;
+        text-overflow: ellipsis;
+        white-space  : nowrap;
       }
     }
 
@@ -42,16 +53,15 @@
       width          : 100%;
       border         : 1px;
       border-radius  : 8px;
-      padding: 16px;
+      padding        : 16px;
 
       h1 {
-        color      : whitesmoke;
-        width      : 20px;
-        height     : 50px;
-        font-size  : 26px;
-    
+        color    : whitesmoke;
+        width    : 20px;
+        height   : 50px;
+        font-size: 26px;
       }
- 
+
     }
   }
 }
