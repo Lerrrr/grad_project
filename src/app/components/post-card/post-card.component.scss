@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: row;
   margin-bottom: 1em;
-  width: 70%;
 
   &__vote-column {
     display: flex;
@@ -16,9 +15,8 @@
     display: flex;
     flex-direction: column;
     background-color: white;
-    min-width: 70%;
 
-
+    flex-grow: 1;
   }
   &__top-bar {
     display: flex;

@@ -1,5 +1,6 @@
-<div *init="{ modalState: signModalState$ | async } as params" class="body">
+<div *init="{ modalState: signModalState$ | async } as params" class="app">
   <app-top-bar
+    class="app__top-bar"
     (signUpClick)="goToSignUp()"
     (logInClick)="signModalState$.next('login')"
     (profileClick)="goToProfile()"

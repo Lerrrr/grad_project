@@ -1,7 +1,19 @@
-.app__sign-modal{
-  position: fixed;
-  top: calc(50vh - 325px);
-  z-index: 999;
-  left: calc(50vw - 425px);
+.app {
+  position: relative;
+
+  &__top-bar {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+
+    display: block;
+  }
+
+  &__sign-modal{
+    position: fixed;
+    top: calc(50vh - 325px);
+    z-index: 999;
+    left: calc(50vw - 425px);
+  }
 }
 
