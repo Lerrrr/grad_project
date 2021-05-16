@@ -1,2 +1,29 @@
+<div class="news">
+  <div class="news__trends">
+    <app-trends-list [trends]="cards"></app-trends-list>
+  </div>
+  <div class="d-flex">
+    <div class="news__body">
+      <app-popular-posts></app-popular-posts>
+      <app-post-card></app-post-card>
+    </div>
+    <div class="news__side-panel">
+      <app-top-news-communities
+        *ngFor="let new of news"
+        [headerBgImage]="new.headerBgImage"
+      ></app-top-news-communities>
+      <app-popular-themes> </app-popular-themes>
+
+      <app-trending-communities
+        *ngFor="let community of communities"
+        [communitiesAvatar]="community.communitiesAvatar"
+      ></app-trending-communities>
+      <app-info-card></app-info-card>
+    </div>
+  </div>
+</div>
+
+
+
 
 <!-- <app-top-bar></app-top-bar> -->

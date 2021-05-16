@@ -1,0 +1,12 @@
+[nz-carousel-content] {
+  height: 120px;
+}
+.trends-list{
+    display: flex;
+    flex-direction: row;
+
+    &__card{
+        margin: 10px;
+        width: 25%;
+    }
+}

@@ -1,42 +1,23 @@
 .top-bar {
-<<<<<<< HEAD
   display: flex;
   flex-direction: row;
   width: auto;
   height: 3em;
-  background-color: cornsilk;
-=======
-  display         : flex;
-  flex-direction  : row;
-  width           : auto;
-  height          : 3em;
-  background-color: black;
-
->>>>>>> f0bbd96ec3414fed41d2e72305fe3601912adf9f
+  background-color: white;
 
   &_big-piece_img {
     display    : flex;
     align-items: center;
-<<<<<<< HEAD
     margin-left: 1em;
 
     img {
       border-radius: 4em;
     }
-=======
-    margin-left: 4em;
-
-    img {
-      border-radius: 25px;
-    }
-
->>>>>>> f0bbd96ec3414fed41d2e72305fe3601912adf9f
   }
 
   &_search {
     display       : flex;
     flex-direction: inherit;
-<<<<<<< HEAD
     align-items: center;
     width: 60%;
     margin-left: 8em;
@@ -48,32 +29,12 @@
     align-items: center;
     button {
       margin-right: 1em;
+      border-radius: 4em;
       
     }
   }
   &_register :first-child {
     display: flex;
-=======
-    align-items   : center;
-    width         : 60%;
-    margin-left   : 8em;
-    margin-right  : 6em;
-
-  }
-
-  &_register {
-    display    : flex;
-    align-items: center;
-
-    button {
-      margin-right: 1em;
-    }
-
-  }
-
-  &_register :first-child {
-    display    : flex;
->>>>>>> f0bbd96ec3414fed41d2e72305fe3601912adf9f
     align-items: center;
   }
 

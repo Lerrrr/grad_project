@@ -1,0 +1,83 @@
+.post-card {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1em;
+  width: 70%;
+
+  &__vote-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(240, 240, 240, 0.952);
+    padding-top: 10px;
+    width: 48px;
+  }
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    min-width: 70%;
+
+
+  }
+  &__top-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px;
+
+    &__user {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      &_avatar {
+      }
+      &_name {
+        margin-bottom: 0;
+        margin-left: 4px;
+      }
+    }
+
+    &_join-button {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      padding: 0 4px;
+      button {
+        border-radius: 4em;
+        font-size: 15px;
+        font-weight: bold;
+      }
+    }
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    &_title {
+      padding: 2px 8px;
+    }
+    &_description {
+      display: flex;
+      justify-content: center;
+
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: row;
+    a {
+      color: rgba(92, 90, 90, 0.801);
+      font-weight: bold;
+    }
+    &_comment-button {
+      padding: 8px 12px 0 20px;
+    }
+    &_share-button {
+      padding: 8px 10px;
+    }
+    &_save-button{
+      padding: 8px 10px;
+    }
+  }
+}

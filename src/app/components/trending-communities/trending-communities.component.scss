@@ -1,0 +1,48 @@
+.trending-communities {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  color: black;
+  width: 20em;
+  height: 25em;
+  margin-top: 1em;
+  border-radius: 0.3em;
+  overflow      : hidden;
+  text-overflow : ellipsis;
+ 
+
+  &_header {
+    padding: 0 12px 12px;
+    &__title {
+      padding: 12px 0 0;
+      
+
+      h2 {
+        font-size: 17px;
+        overflow      : hidden;
+        text-overflow : ellipsis;
+      }
+    }
+  }
+
+  &_communities-body{
+      display: flex;
+      flex-direction: column;
+      
+  }
+
+  &_communities{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 1em;
+
+    button{
+      border-radius: 4em;
+      margin-right: 1em;
+      font-weight: bold;
+    }
+  }
+
+}

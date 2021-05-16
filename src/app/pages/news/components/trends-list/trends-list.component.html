@@ -1,0 +1,15 @@
+<nz-carousel [nzDots]="false" [nzAutoPlay]="true" [nzAutoPlaySpeed]="20000">
+  <div nz-carousel-content *ngFor="let trendGroup of trends">
+    <div class="trends-list" >
+      <app-trending-card
+        class="trends-list__card"
+        *ngFor="let card of trendGroup"
+        [title]="card.title"
+        [description]="card.description"
+        [source]="card.source"
+        [bgImage]="card.bgImage"
+      ></app-trending-card>
+    </div>
+  </div>
+
+</nz-carousel>

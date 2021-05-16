@@ -1,12 +1,9 @@
-<app-top-bar (signUpClick)="goToSignUp()"></app-top-bar>
-<app-trending-card
-  *ngFor="let card of cards"
-  [title]="card.title"
-  [description]="card.description"
-  [source]="card.source"
-  [bgImage]="card.bgImage"
-></app-trending-card>
-<app-popular-posts
-></app-popular-posts>
-<router-outlet></router-outlet>
- 
+<div class="body">
+  <app-top-bar (signUpClick)="goToSignUp()" (logInClick)="signModalState$.next('login')"
+               (profileClick)="goToProfile()"></app-top-bar>
+  <app-sign-modal class="app__sign-modal" *ngIf="signModalState$ | async as modalState" [state]="modalState"
+                  (closeModal)="signModalState$.next(null)" (applyClick)="signUpHandler($event)"></app-sign-modal>
+
+<!--  <app-profile></app-profile>-->
+  <router-outlet></router-outlet>
+</div>

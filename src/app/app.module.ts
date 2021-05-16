@@ -15,6 +15,9 @@ import { CommonModule } from '@angular/common';
 import { ComponentsModule } from './components/components.module';
 import { AppRoutingModule } from './app-routing.module';
 import { NewsModule } from './pages/news/news.module';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import {ProfileModule} from './pages/profile/profile.module';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 
 const antDesignIcons = AllIcons as {
@@ -26,20 +29,23 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    CommonModule,
-    NzButtonModule,
-    NzInputModule,
-    NzDropDownModule,
-    BrowserAnimationsModule,
-    NzIconModule,
-    ComponentsModule,
-    AppRoutingModule,
-    NewsModule,
-    BrowserModule,
-    BrowserAnimationsModule
-  ],
+    imports: [
+        BrowserModule,
+        CommonModule,
+        NzButtonModule,
+        NzInputModule,
+        NzDropDownModule,
+        BrowserAnimationsModule,
+        NzIconModule,
+        ComponentsModule,
+        AppRoutingModule,
+        NewsModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        NzCollapseModule,
+        ProfileModule,
+        HttpClientModule
+    ],
   providers: [{ provide: NZ_ICONS, useValue: icons }],
   bootstrap: [AppComponent]
 })

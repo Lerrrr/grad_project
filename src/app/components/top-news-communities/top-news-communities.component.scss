@@ -1,0 +1,58 @@
+.top-news-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  color: black;
+  border: 20px;
+  width: 20em;
+  border-radius: 0.3em;
+
+  &_header {
+    width: 100%;
+    height: 5em;
+    border-radius: 0.3em;
+
+    &__title {
+      color: white;
+      margin-top: 2em;
+      margin-left: 1em;
+      font-size: 17px;
+    }
+  }
+  &__row{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+    
+
+    &_count{
+      color: red;
+    }
+
+    &_title{
+
+    }
+
+    &_avatar{
+      padding: 0 8px 0  10px;
+    }
+  }
+  
+
+  &_view-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 12px;
+  }
+  &_footer-button {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 6px 6px;
+  }
+
+  button {
+    border-radius: 4em;
+  }
+}

@@ -1,0 +1,22 @@
+// @import "styles";
+@import "src/vars.scss";
+.news {
+  display: flex;
+  flex-direction: column;
+  background-color: $mainBgColor;
+  padding: 48px;
+  &__trends{
+    margin-bottom: 24px;
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: 1em;
+  }
+  &_side-panel {
+    display: flex;
+    flex-direction: column;
+
+  }
+}

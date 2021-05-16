@@ -1,3 +1,4 @@
+import { getSupportedInputTypes } from '@angular/cdk/platform';
 import { Component, OnInit, Input} from '@angular/core';
 
 @Component({
@@ -7,7 +8,8 @@ import { Component, OnInit, Input} from '@angular/core';
 })
 
 export class PopularPostsComponent implements OnInit {
-
+  
+  
   
  
   constructor() { }

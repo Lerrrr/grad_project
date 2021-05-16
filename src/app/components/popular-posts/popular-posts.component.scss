@@ -1,67 +1,26 @@
 .popular-post-card {
-    display: flex;
-    flex-direction: row;  
-    
-
-    &_vote-column {
-      display: flex;
-      flex-direction: column;
-    }
-  
-    &_wrapper {
-      display: flex;
-      flex-direction: column;
-  
-    }
-  
-    &_top-bar {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-  
-      &_user {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-  
-        &_avatar {
-        }
-  
-        &_name {
-  
-        }
-      }
-  
-      &_button {
-  
-      }
-    }
-  
-    &_body {
-      &_title {
-  
-      }
-  
-      &_description {
-  
-      }
-    }
-  
-    &__footer {
-      &_comment-button {
-  
-      }
-  
-      &_share-button {
-  
-      }
-    }
-
-    
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  p{
+    font-size: 15px;
   }
 
-  
+  &_filter-panel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    padding: 8px 12px;
+    border-radius: 0.2em;
+    max-width: 70%;
+    margin-bottom: 1em;
 
-  
+    button {
+      border-radius: 4em;
+      margin-right: 1em;
+    }
+    
+  }
 }

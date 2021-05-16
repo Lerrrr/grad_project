@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import {BehaviorSubject} from 'rxjs';
+import {AuthService} from './global/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,24 +9,33 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  cards = [{
-    bgImage: 'https://wallpapershome.ru/images/pages/pic_h/6592.jpg',
-    title:'Test',
-    description:'Description Description Description Description Description Description ',
-    source:{
-      avatar: 'https://www.1obl.ru/upload/medialibrary/04b/04b0534e588d53ba4aaf7f9edc00cbc2.png',
-      name: 'Lera'
-    }
+
+  users = [{
+    BgImage: 'https://i.pinimg.com/564x/0f/71/29/0f7129f5e563ec70cbc5c54ac26daedd.jpg'
+
   }];
-  
- 
-   
-  
-  constructor(private router: Router) {
+  signModalState$ = new BehaviorSubject(null);
+
+  constructor(private router: Router, private authService: AuthService) {
   }
   goToSignUp() {
+    // this.router.navigate([
+    //   'sign-up'
+    // ]);
+    this.signModalState$.next('sign-up');
+  }
+
+  goToProfile() {
     this.router.navigate([
-      'sign-up'
+      'profile'
     ]);
+  }
+
+  signUpHandler(body: any) {
+    this.authService.signUp(body).subscribe((res) => {
+      console.log(res);
+    },
+      err => console.log(err)
+    );
   }
 }
