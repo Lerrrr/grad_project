@@ -42,8 +42,13 @@
     "@angular/platform-browser-dynamic": "^11.2.6",
     "@angular/router": "^11.2.6",
     "@ant-design/icons-angular": "^11.0.1",
+    "@ngxf/platform": "^9.0.2",
+    "@ngxf/socket.io": "^9.0.2",
+    "@types/socket.io-client": "^3.0.0",
     "ng-zorro-antd": "^11.2.0",
+    "prettier": "^2.3.0",
     "rxjs": "^6.6.3",
+    "socket.io-client": "^4.1.1",
     "tslib": "^1.14.1",
     "zone.js": "^0.11.4"
   }

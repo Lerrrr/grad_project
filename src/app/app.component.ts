@@ -14,6 +14,7 @@ export class AppComponent {
     BgImage: 'https://i.pinimg.com/564x/0f/71/29/0f7129f5e563ec70cbc5c54ac26daedd.jpg'
 
   }];
+
   signModalState$ = new BehaviorSubject(null);
 
   constructor(private router: Router, private authService: AuthService) {
@@ -37,5 +38,9 @@ export class AppComponent {
     },
       err => console.log(err)
     );
+  }
+
+  logoClickHandler() {
+    this.router.navigate(['news']);
   }
 }

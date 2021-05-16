@@ -18,6 +18,7 @@ import { NewsModule } from './pages/news/news.module';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import {ProfileModule} from './pages/profile/profile.module';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {NgxfModule} from '@ngxf/platform';
 
 
 const antDesignIcons = AllIcons as {
@@ -44,7 +45,8 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
         BrowserAnimationsModule,
         NzCollapseModule,
         ProfileModule,
-        HttpClientModule
+        HttpClientModule,
+        NgxfModule
     ],
   providers: [{ provide: NZ_ICONS, useValue: icons }],
   bootstrap: [AppComponent]

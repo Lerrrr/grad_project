@@ -9,6 +9,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class TopBarComponent implements OnInit {
 
   @Output() signUpClick = new EventEmitter();
+  @Output() logoClick = new EventEmitter();
   @Output() logInClick = new EventEmitter();
   @Output() profileClick = new EventEmitter();
 
