@@ -5,12 +5,29 @@
   height: 650px;
   background-color: white;
 
+  border-radius: 20px;
+
+  &:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: black;
+    opacity: 0.3;
+  }
+
   &_background-photo {
     background-image: url("https://i.pinimg.com/564x/c4/48/7b/c4487b7a02e000d18504d4469fcb4833.jpg");
     background-size: 400px;
     display: flex;
     width: 300px;
 
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
   }
 
   &_content {
@@ -18,6 +35,7 @@
     flex-direction: column;
     width: 100%;
 
+    padding: 24px;
 
     &__close-button {
       display: flex;
