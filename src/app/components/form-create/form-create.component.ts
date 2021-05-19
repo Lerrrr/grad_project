@@ -46,8 +46,22 @@ export class FormCreateComponent implements OnInit {
 
   public Editor = ClassicEditor;
 
+  ckEditorConfig: any = {
+    toolbar: [
+      'heading',
+      '|',
+      'bold',
+      'italic',
+      'link',
+      'bulletedList',
+      'numberedList',
+      'blockQuote'
+    ]
+  };
+
   @ViewChild('headingInput', {static: false}) headingInputEl: ElementRef;
   @ViewChild('descriptionTextarea', {static: false}) descriptionTextareaEl: ElementRef;
+
   constructor() { }
 
 
@@ -64,7 +78,7 @@ export class FormCreateComponent implements OnInit {
 
   changeTextareField({ editor }: ChangeEvent) {
     const data = editor.getData();
-    console.log(data);
+
     this.textareaValue$.next(data);
   }
 }

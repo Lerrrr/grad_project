@@ -1,4 +1,4 @@
-<div class="post-form-body">
+<div *init="{ textAreaValue: textareaValue$ | async} as params" class="post-form-body">
   <h3 class="post-form-body__form-title">Create a post</h3>
   <hr />
   <div class="post-form-body__user">
@@ -27,23 +27,11 @@
               <div class="post-form-body_description">
                 <ckeditor
                   [editor]="Editor"
-                  [config]="{
-                    toolbar: [
-                      'heading',
-                      '|',
-                      'bold',
-                      'italic',
-                      'link',
-                      'bulletedList',
-                      'numberedList',
-                      'blockQuote'
-                    ]
-                  }"
+                  [config]="ckEditorConfig"
                   data="<p>Hello, world!</p>"
                   #descriptionTextarea
                   (change)="changeTextareField($event)"
                 ></ckeditor>
-                <!--                <textarea #descriptionTextarea rows="5" nz-input placeholder="Text"></textarea>-->
               </div>
             </div>
           </ng-container>
@@ -55,7 +43,7 @@
         (click)="
           createPost({
             heading: headingInputEl.nativeElement.value,
-            description: descriptionTextareaEl.nativeElement.value
+            description: params.textAreaValue
           })
         "
         nz-button

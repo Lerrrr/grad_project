@@ -25,6 +25,7 @@ import { FormCreateComponent } from './form-create/form-create.component';
 import { UserCardComponent } from './user-card/user-card.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
+import {NgxfModule} from '@ngxf/platform';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
     NzUploadModule,
     ReactiveFormsModule,
     CKEditorModule,
+    NgxfModule,
   ],
   exports: [
     PopularPostsComponent,
