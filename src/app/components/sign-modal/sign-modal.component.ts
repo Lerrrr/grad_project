@@ -17,6 +17,11 @@ export class SignModalComponent implements OnInit {
     password: ['']
   });
 
+  loginForm = this.fb.group({
+    email: ['', Validators.required],
+    password: ['']
+  });
+
   @Output() closeModal = new EventEmitter();
   @Output() applyClick = new EventEmitter();
   constructor(private fb: FormBuilder) { }
@@ -26,6 +31,9 @@ export class SignModalComponent implements OnInit {
 
   signupClickHandler(body: { name: string; email: string; password: string; }) {
     // console.log(body);
+    this.applyClick.emit(body);
+  }
+  loginClickHandler(body: { name: string; password: string; }) {
     this.applyClick.emit(body);
   }
 }

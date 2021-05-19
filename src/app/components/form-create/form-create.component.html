@@ -24,11 +24,19 @@
                 <textarea #descriptionTextarea rows="5" nz-input placeholder="Text"></textarea>
               </div>
             </ng-container>
+            <ng-container *ngSwitchCase="2">
+              <div class="post-form-body_title">
+                <input #headingInput nz-input placeholder="Title">
+              </div>
+              <div class="post-form-body_description">
+                <input type="file" accept=".jpg, .jpeg, .png, .mp4">
+              </div>
+            </ng-container>
           </ng-container>
         </nz-tab>
       </nz-tabset>
       <div class="post-form-body__post-button">
-        <button (click)="createPost({
+        <button (click)="createPostHandler({
         heading: headingInputEl.nativeElement.value,
         description: descriptionTextareaEl.nativeElement.value
         })" nz-button nzType="primary">Post</button>

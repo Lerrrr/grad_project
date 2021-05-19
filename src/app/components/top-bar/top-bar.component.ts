@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-top-bar',
@@ -8,10 +8,13 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 export class TopBarComponent implements OnInit {
 
+  @Input() isLogged;
+
   @Output() signUpClick = new EventEmitter();
   @Output() logoClick = new EventEmitter();
   @Output() logInClick = new EventEmitter();
   @Output() profileClick = new EventEmitter();
+  @Output() logoutClick = new EventEmitter();
 
   constructor() { }
 

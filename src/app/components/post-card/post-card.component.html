@@ -3,7 +3,7 @@
     <div class="post-card__vote-column_up-button">
       <i nz-icon nzType="arrow-up" nzTheme="outline"></i>
     </div>
-    <div class="post-card__vote-column_counter"><p>33.7K</p></div>
+    <div class="post-card__vote-column_counter"><p>{{ rate }}</p></div>
     <div class="post-card__vote-column_down-button">
       <i nz-icon nzType="arrow-down" nzTheme="outline"></i>
     </div>
@@ -19,7 +19,7 @@
           />
         </div>
         <p class="post-card__top-bar__user_name">
-          u/username
+          {{ userName }}
         </p>
 
       </div>
@@ -31,9 +31,10 @@
 
   <div class="post-card__body">
     <div class="post-card__body_title">
-      <h3>Заголовок</h3>
+      <h3>{{ heading }}</h3>
     </div>
     <div class="post-card__body_description">
+      {{ description }}
     </div>
 <!--    <img-->
 <!--    class="post-card__body_image"-->

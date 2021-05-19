@@ -8,6 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class PostCardComponent implements OnInit {
   @Input() userName;
   @Input() userAvatar;
+  @Input() rate;
+  @Input() heading;
+  @Input() description;
 
   constructor() {}
 

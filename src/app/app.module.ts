@@ -16,39 +16,48 @@ import { ComponentsModule } from './components/components.module';
 import { AppRoutingModule } from './app-routing.module';
 import { NewsModule } from './pages/news/news.module';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
-import {ProfileModule} from './pages/profile/profile.module';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
-import {NgxfModule} from '@ngxf/platform';
-
+import { ProfileModule } from './pages/profile/profile.module';
+import {
+  HTTP_INTERCEPTORS,
+  HttpClient,
+  HttpClientModule,
+} from '@angular/common/http';
+import { NgxfModule } from '@ngxf/platform';
+import { AuthInterceptor } from './global/auth.interceptor';
 
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition;
 };
-const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesignIcons[key])
+const icons: IconDefinition[] = Object.keys(antDesignIcons).map(
+  (key) => antDesignIcons[key]
+);
 
 // const icons: IconDefinition[] = [ DownloadOutline ];
 
 @NgModule({
   declarations: [AppComponent],
-    imports: [
-        BrowserModule,
-        CommonModule,
-        NzButtonModule,
-        NzInputModule,
-        NzDropDownModule,
-        BrowserAnimationsModule,
-        NzIconModule,
-        ComponentsModule,
-        AppRoutingModule,
-        NewsModule,
-        BrowserModule,
-        BrowserAnimationsModule,
-        NzCollapseModule,
-        ProfileModule,
-        HttpClientModule,
-        NgxfModule
-    ],
-  providers: [{ provide: NZ_ICONS, useValue: icons }],
-  bootstrap: [AppComponent]
+  imports: [
+    BrowserModule,
+    CommonModule,
+    NzButtonModule,
+    NzInputModule,
+    NzDropDownModule,
+    BrowserAnimationsModule,
+    NzIconModule,
+    ComponentsModule,
+    AppRoutingModule,
+    NewsModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    NzCollapseModule,
+    ProfileModule,
+    HttpClientModule,
+    NgxfModule,
+  ],
+  providers: [
+    { provide: NZ_ICONS, useValue: icons },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

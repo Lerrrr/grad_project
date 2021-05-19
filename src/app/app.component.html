@@ -1,17 +1,26 @@
-<div *init="{ modalState: signModalState$ | async } as params" class="app">
+<div
+  *init="{
+    modalState: signModalState$ | async,
+    isLogged: isLogged$ | async
+  } as params"
+  class="app"
+>
   <app-top-bar
     class="app__top-bar"
+    [isLogged]="params.isLogged"
     (signUpClick)="goToSignUp()"
     (logInClick)="signModalState$.next('login')"
     (profileClick)="goToProfile()"
     (logoClick)="logoClickHandler()"
+    (logoutClick)="logoutClick()"
   ></app-top-bar>
   <app-sign-modal
     class="app__sign-modal"
     *ngIf="params.modalState"
     [state]="params.modalState"
     (closeModal)="signModalState$.next(null)"
-    (applyClick)="signUpHandler($event)"
+    (applyClick)="params.modalState === 'login' ? logIn($event) : signUpHandler($event)"
+
   ></app-sign-modal>
 
   <!--  <app-profile></app-profile>-->

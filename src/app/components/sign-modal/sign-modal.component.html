@@ -7,19 +7,23 @@
           <i nz-icon nzType="close" nzTheme="outline"></i>
         </button>
       </div>
-      <form class="sign-modal_content__form">
+      <form
+        (ngSubmit)="loginClickHandler(loginForm.value)"
+        class="sign-modal_content__form"
+            [formGroup]="loginForm">
         <h2 class="sign-modal_content__title">Log In</h2>
         <ng-template #prefixTemplateEmail
           ><i nz-icon nzType="mail" nzTheme="outline"></i></ng-template
         ><br />
         <nz-input-group [nzPrefix]="prefixTemplateUser">
-          <input type="text" nz-input placeholder="username" />
+          <input type="text" [formControlName]="'email'" nz-input placeholder="email" />
         </nz-input-group>
         <ng-template #prefixTemplateUser
           ><i nz-icon nzType="user"></i></ng-template
         ><br />
         <nz-input-group [nzSuffix]="suffixTemplate">
           <input
+            [formControlName]="'password'"
             [type]="passwordVisible ? 'text' : 'password'"
             nz-input
             placeholder="password"
@@ -33,11 +37,12 @@
           ></i> </ng-template
         ><br />
         <div class="content__form_button">
-          <button nz-button nzType="primary">Log In</button>
+          <button nz-button nzType="primary" type="submit">Log In</button>
         </div>
       </form>
     </div>
   </ng-container>
+
 
   <ng-container *ngIf="state === 'sign-up'">
     <img class="sign-modal_background-photo" src="" />

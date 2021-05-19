@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnInit, Output, ViewChild, EventEmitter} from '@angular/core';
 import { NzUploadFile } from 'ng-zorro-antd/upload';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 
@@ -43,6 +43,8 @@ export class FormCreateComponent implements OnInit {
 
   @ViewChild('headingInput', {static: false}) headingInputEl: ElementRef;
   @ViewChild('descriptionTextarea', {static: false}) descriptionTextareaEl: ElementRef;
+
+  @Output() createPost = new EventEmitter();
   constructor() { }
 
 
@@ -50,10 +52,10 @@ export class FormCreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  createPost(body: {
+  createPostHandler(body: {
     heading: string;
     description: string;
   }) {
-    console.log(body);
+    this.createPost.emit(body);
   }
 }

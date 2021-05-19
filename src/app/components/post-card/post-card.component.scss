@@ -51,13 +51,13 @@
   &__body {
     display: flex;
     flex-direction: column;
+    padding: 8px;
+
     &_title {
-      padding: 2px 8px;
+      //padding: 2px 8px
     }
     &_description {
       display: flex;
-      justify-content: center;
-
     }
   }
 

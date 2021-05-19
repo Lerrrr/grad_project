@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import {Injectable, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {BehaviorSubject} from 'rxjs';
 
 
 @Injectable({
@@ -7,10 +8,23 @@ import {HttpClient} from '@angular/common/http';
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) { }
+  isLogged$ = new BehaviorSubject(false);
+
+  constructor(private http: HttpClient) {
+  }
 
   signUp(body){
     console.log(body);
-    return this.http.post('localhost:4000/api/user/registration', body);
+    return this.http.post('http://localhost:4000/api/user/registration', body);
+  }
+
+  logIn(body) {
+    return this.http.post('http://localhost:4000/api/user/login', body);
+  }
+
+  logOut() {
+    console.log('LOG OUT');
+    localStorage.setItem('id_token', '');
+    this.isLogged$.next(false);
   }
 }

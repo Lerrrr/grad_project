@@ -5,6 +5,7 @@ import { NewsRoutingModule } from './news-routing.module';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { TrendsListComponent } from './components/trends-list/trends-list.component';
 import {NzCarouselModule} from 'ng-zorro-antd/carousel';
+import {NgxfModule} from '@ngxf/platform';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {NzCarouselModule} from 'ng-zorro-antd/carousel';
         CommonModule,
         NewsRoutingModule,
         ComponentsModule,
-        NzCarouselModule
+        NzCarouselModule,
+        NgxfModule
     ]
 })
 
