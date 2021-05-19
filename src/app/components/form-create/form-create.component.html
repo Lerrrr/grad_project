@@ -1,40 +1,69 @@
 <div class="post-form-body">
   <h3 class="post-form-body__form-title">Create a post</h3>
-  <hr>
+  <hr />
   <div class="post-form-body__user">
     <div class="post-form-body__user_avatar">
-      <img src="https://cdn.iconscout.com/icon/free/png-256/reddit-74-434748.png" width="30" height="30">
+      <img
+        src="https://cdn.iconscout.com/icon/free/png-256/reddit-74-434748.png"
+        width="30"
+        height="30"
+      />
     </div>
     <p class="post-form-body__user_name">u/user</p>
   </div>
   <div class="post-form-body_form">
-    <div class="post-form-body__tabs">
-      <nz-tabset>
-        <nz-tab class="post-form-body__tabs_tab" *ngFor="let tab of tabs" [nzTitle]="titleTemplate">
-          <ng-template #titleTemplate>
-            <i nz-icon [nzType]="tab.icon"></i>
-            {{ tab.name }}
-          </ng-template>
-          <ng-container [ngSwitch]="tab.id">
-            <ng-container *ngSwitchCase="1">
+    <nz-tabset>
+      <nz-tab *ngFor="let tab of tabs" [nzTitle]="titleTemplate">
+        <ng-template #titleTemplate>
+          <i nz-icon [nzType]="tab.icon"></i>
+          {{ tab.name }}
+        </ng-template>
+        <ng-container [ngSwitch]="tab.id">
+          <ng-container *ngSwitchCase="1">
+            <div class="post-form-body__content">
               <div class="post-form-body_title">
-                <input #headingInput nz-input placeholder="Title">
+                <input #headingInput nz-input placeholder="Title" />
               </div>
               <div class="post-form-body_description">
-                <textarea #descriptionTextarea rows="5" nz-input placeholder="Text"></textarea>
+                <ckeditor
+                  [editor]="Editor"
+                  [config]="{
+                    toolbar: [
+                      'heading',
+                      '|',
+                      'bold',
+                      'italic',
+                      'link',
+                      'bulletedList',
+                      'numberedList',
+                      'blockQuote'
+                    ]
+                  }"
+                  data="<p>Hello, world!</p>"
+                  #descriptionTextarea
+                  (change)="changeTextareField($event)"
+                ></ckeditor>
+                <!--                <textarea #descriptionTextarea rows="5" nz-input placeholder="Text"></textarea>-->
               </div>
-            </ng-container>
+            </div>
           </ng-container>
-        </nz-tab>
-      </nz-tabset>
-      <div class="post-form-body__post-button">
-        <button (click)="createPost({
-        heading: headingInputEl.nativeElement.value,
-        description: descriptionTextareaEl.nativeElement.value
-        })" nz-button nzType="primary">Post</button>
-      </div>
+        </ng-container>
+      </nz-tab>
+    </nz-tabset>
+    <div class="post-form-body__post-button">
+      <button
+        (click)="
+          createPost({
+            heading: headingInputEl.nativeElement.value,
+            description: descriptionTextareaEl.nativeElement.value
+          })
+        "
+        nz-button
+        nzType="primary"
+      >
+        Post
+      </button>
     </div>
-
   </div>
 </div>
 

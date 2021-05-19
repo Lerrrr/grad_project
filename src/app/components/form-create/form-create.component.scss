@@ -1,14 +1,24 @@
+
+:host ::ng-deep .ant-tabs-tab {
+  &:first-child{
+    margin-left: 16px;
+  }
+}
+
+:host ::ng-deep .ck-editor__editable {
+  min-height: 200px;
+}
+
 .post-form-body {
+
   nz-tabset {
     width: 45em;
   }
-  &__tabs{
-    &_tab{
-     &:first-child{
-       margin-left: 5px;
-     }
-    }
+
+  &__content {
+    padding: 8px;
   }
+
   &__form-title{
     margin-bottom: 30px;
   }
@@ -48,7 +58,7 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    margin: 0 5px 10px;
+    margin: 16px;
     button{
       width: 5em;
       border-radius: 4em;
