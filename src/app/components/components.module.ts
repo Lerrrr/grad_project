@@ -8,14 +8,13 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzGridModule } from 'ng-zorro-antd/grid';
-import { TopNewsCommunitiesComponent } from './top-news-communities/top-news-communities.component'
+import { TopNewsCommunitiesComponent } from './top-news-communities/top-news-communities.component';
 import { PopularThemesComponent } from './popular-themes/popular-themes.component';
 import { TrendingCommunities } from './trending-communities/trending-communities.component';
 import { InfoCardComponent } from './info-card/info-card.component';
 import { PostCardComponent } from './post-card/post-card.component';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
-
 
 import { IconDefinition } from '@ant-design/icons-angular';
 import { NZ_ICONS } from 'ng-zorro-antd/icon';
@@ -24,7 +23,12 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { SignModalComponent } from './sign-modal/sign-modal.component';
 import { FormCreateComponent } from './form-create/form-create.component';
 import { UserCardComponent } from './user-card/user-card.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
+import {NgxfModule} from '@ngxf/platform';
+import {NzListModule} from 'ng-zorro-antd/list';
+import {NzCommentModule} from 'ng-zorro-antd/comment';
+import {NzAvatarModule} from 'ng-zorro-antd/avatar';
 
 @NgModule({
   declarations: [
@@ -38,22 +42,27 @@ import {ReactiveFormsModule} from '@angular/forms';
     PostCardComponent,
     SignModalComponent,
     FormCreateComponent,
-    UserCardComponent
-
+    UserCardComponent,
   ],
-    imports: [
-        CommonModule,
-        NzButtonModule,
-        NzInputModule,
-        NzDropDownModule,
-        NzIconModule,
-        NzCardModule,
-        NzGridModule,
-        NzCollapseModule,
-        NzTabsModule,
-        NzUploadModule,
-        ReactiveFormsModule
-    ],
+  imports: [
+    CommonModule,
+    NzButtonModule,
+    NzInputModule,
+    NzDropDownModule,
+    NzIconModule,
+    NzCardModule,
+    NzGridModule,
+    NzCollapseModule,
+    NzTabsModule,
+    NzUploadModule,
+    ReactiveFormsModule,
+    CKEditorModule,
+    NgxfModule,
+    NzListModule,
+    NzCommentModule,
+    NzAvatarModule,
+    FormsModule,
+  ],
   exports: [
     PopularPostsComponent,
     TopBarComponent,
@@ -65,9 +74,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     PostCardComponent,
     SignModalComponent,
     FormCreateComponent,
-    UserCardComponent
-
-  ]
+    UserCardComponent,
+  ],
 })
-
-export class ComponentsModule { }
+export class ComponentsModule {}

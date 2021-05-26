@@ -6,6 +6,8 @@ import { NewsStore, NewsState } from './news.store';
 export class NewsQuery extends Query<NewsState> {
 
   allPosts$ = this.select('allPosts').pipe(filterNil);
+  comments$ = this.select('comments').pipe(filterNil);
+
 
   constructor(protected store: NewsStore) {
     super(store);

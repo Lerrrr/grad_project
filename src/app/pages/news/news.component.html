@@ -1,16 +1,30 @@
-<div *init="{ allPosts: allPosts$ | async } as params" class="news">
+<div
+  *init="{
+    allPosts: allPosts$ | async,
+    newsType: selectedNewsType$ | async
+  } as params"
+  class="news"
+>
   <div class="news__trends">
     <app-trends-list [trends]="cards"></app-trends-list>
   </div>
   <div class="d-flex">
     <div class="news__body">
-      <app-popular-posts></app-popular-posts>
+      <app-popular-posts
+        [type]="params.newsType"
+        (typeChange)="selectedNewsType$.next($event)"
+      ></app-popular-posts>
       <app-post-card
-        *ngFor="let card of params.allPosts"
+        *ngFor="let card of params.allPosts; trackBy: trackByFn"
         [heading]="card.heading"
         [description]="card.description"
-        [userName]="card.userId"
+        [userName]="card.user.name"
         [rate]="card.rating"
+        [image]="card.img"
+        [video]="card.video"
+        [comments]="card.comments"
+        (addComment)="sendComment($event, card.userId, card.id)"
+        (upVoteClick)="upVote(card.userId, card.id)"
       ></app-post-card>
     </div>
     <div class="news__side-panel">

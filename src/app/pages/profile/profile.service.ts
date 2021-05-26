@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {PostDto} from '../news/news.service';
+import {Comment, PostDto} from '../news/news.service';
 
 export interface Post {
   createdAt: string;
@@ -10,8 +10,12 @@ export interface Post {
   img: string;
   rating: number;
   updatedAt: string;
+  user: {
+    name: string;
+  };
   userId: number;
   video: string;
+  comments?: Comment[];
 }
 
 @Injectable({

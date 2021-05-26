@@ -42,6 +42,8 @@
     "@angular/platform-browser-dynamic": "^11.2.6",
     "@angular/router": "^11.2.6",
     "@ant-design/icons-angular": "^11.0.1",
+    "@ckeditor/ckeditor5-angular": "^2.0.1",
+    "@ckeditor/ckeditor5-build-classic": "^27.1.0",
     "@datorama/akita": "^6.1.3",
     "@ngxf/platform": "^9.0.2",
     "@ngxf/socket.io": "^9.0.2",

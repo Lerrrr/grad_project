@@ -1,7 +1,8 @@
 import {Component, ElementRef, OnInit, Output, ViewChild, EventEmitter} from '@angular/core';
 import { NzUploadFile } from 'ng-zorro-antd/upload';
-import { NzUploadModule } from 'ng-zorro-antd/upload';
-
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import {BehaviorSubject} from 'rxjs';
+import {ChangeEvent} from '@ckeditor/ckeditor5-angular';
 
 @Component({
   selector: 'app-form-create',
@@ -41,8 +42,27 @@ export class FormCreateComponent implements OnInit {
     }
   ];
 
+  textareaValue$ = new BehaviorSubject('');
+
+
+  public Editor = ClassicEditor;
+
+  ckEditorConfig: any = {
+    toolbar: [
+      'heading',
+      '|',
+      'bold',
+      'italic',
+      'link',
+      'bulletedList',
+      'numberedList',
+      'blockQuote'
+    ]
+  };
+
   @ViewChild('headingInput', {static: false}) headingInputEl: ElementRef;
   @ViewChild('descriptionTextarea', {static: false}) descriptionTextareaEl: ElementRef;
+
 
   @Output() createPost = new EventEmitter();
   constructor() { }
@@ -55,7 +75,14 @@ export class FormCreateComponent implements OnInit {
   createPostHandler(body: {
     heading: string;
     description: string;
+    img: string;
   }) {
     this.createPost.emit(body);
+  }
+
+  changeTextareField({ editor }: ChangeEvent) {
+    const data = editor.getData();
+
+    this.textareaValue$.next(data);
   }
 }

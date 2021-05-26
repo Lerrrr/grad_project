@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsService } from './news.service';
-import { tap } from 'rxjs/operators';
+import {map, tap} from 'rxjs/operators';
+import {BehaviorSubject, combineLatest} from 'rxjs';
 
 @Component({
   selector: 'app-news',
@@ -12,9 +13,9 @@ export class NewsComponent implements OnInit {
     [
       {
         bgImage: 'https://i.redd.it/mdvmefeejg331.jpg',
-        title: 'Test',
+        title: 'IIHF',
         description:
-          'Description Description Description Description Description Description ',
+          ' Первая победа Швеции на чемпионате мира',
         source: {
           avatar:
             'https://www.pinclipart.com/picdir/middle/116-1168646_well-i-tried-to-make-my-avatar-to.png',
@@ -23,9 +24,9 @@ export class NewsComponent implements OnInit {
       },
       {
         bgImage: 'https://i.redd.it/mdvmefeejg331.jpg',
-        title: 'Test2',
+        title: 'КХЛ',
         description:
-          'Description Description Description Description Description Description ',
+          'Сергей Толчинский - самый обсуждаемый игрок межсезонья',
         source: {
           avatar:
             'https://www.pinclipart.com/picdir/middle/116-1168646_well-i-tried-to-make-my-avatar-to.png',
@@ -34,9 +35,9 @@ export class NewsComponent implements OnInit {
       },
       {
         bgImage: 'https://i.redd.it/mdvmefeejg331.jpg',
-        title: 'Test3',
+        title: 'КХЛ',
         description:
-          'Description Description Description Description Description Description ',
+          'Главные сделки КХЛ, которых ждут в ближайшее время ',
         source: {
           avatar:
             'https://www.pinclipart.com/picdir/middle/116-1168646_well-i-tried-to-make-my-avatar-to.png',
@@ -45,9 +46,9 @@ export class NewsComponent implements OnInit {
       },
       {
         bgImage: 'https://i.redd.it/mdvmefeejg331.jpg',
-        title: 'Test4',
+        title: 'НХЛ',
         description:
-          'Description Description Description Description Description Description ',
+          'Первый гол Капризова в НХЛ! И п  роигрыш "Миннесоты"',
         source: {
           avatar:
             'https://www.pinclipart.com/picdir/middle/116-1168646_well-i-tried-to-make-my-avatar-to.png',
@@ -59,9 +60,9 @@ export class NewsComponent implements OnInit {
     [
       {
         bgImage: 'https://i.redd.it/mdvmefeejg331.jpg',
-        title: 'Test5',
+        title: 'НХЛ',
         description:
-          'Description Description Description Description Description Description ',
+          'Никита Кучеров выбил 100 очков в плей-офф НХЛ ',
         source: {
           avatar:
             'https://www.pinclipart.com/picdir/middle/116-1168646_well-i-tried-to-make-my-avatar-to.png',
@@ -70,9 +71,9 @@ export class NewsComponent implements OnInit {
       },
       {
         bgImage: 'https://i.redd.it/mdvmefeejg331.jpg',
-        title: 'Test6',
+        title: 'IIHF',
         description:
-          'Description Description Description Description Description Description ',
+          'Дания одержала победу над Великобританией в овертайме ',
         source: {
           avatar:
             'https://www.pinclipart.com/picdir/middle/116-1168646_well-i-tried-to-make-my-avatar-to.png',
@@ -81,9 +82,9 @@ export class NewsComponent implements OnInit {
       },
       {
         bgImage: 'https://i.redd.it/mdvmefeejg331.jpg',
-        title: 'Test7',
+        title: 'IIHF',
         description:
-          'Description Description Description Description Description Description ',
+          'Сборная Финландяии одержала волевую победу над Норвегией',
         source: {
           avatar:
             'https://www.pinclipart.com/picdir/middle/116-1168646_well-i-tried-to-make-my-avatar-to.png',
@@ -92,9 +93,9 @@ export class NewsComponent implements OnInit {
       },
       {
         bgImage: 'https://i.redd.it/mdvmefeejg331.jpg',
-        title: 'Test8',
+        title: 'U18',
         description:
-          'Description Description Description Description Description Description ',
+          'ЮЧМ даты проведения 27.04.21 - 07.05.2021 ',
         source: {
           avatar:
             'https://www.pinclipart.com/picdir/middle/116-1168646_well-i-tried-to-make-my-avatar-to.png',
@@ -123,13 +124,47 @@ export class NewsComponent implements OnInit {
     },
   ];
 
-  allPosts$ = this.newsService.allPosts$.pipe(
-    tap((v) => console.log('POSTS', v))
+  selectedNewsType$: BehaviorSubject<'new' | 'hot'> = new BehaviorSubject('hot');
+  allPosts$ = combineLatest([this.newsService.allPosts$, this.newsService.comment$, this.selectedNewsType$.asObservable()]).pipe(
+    map(([allPosts, comments, newsType]) => {
+      const performedPosts = allPosts.map(post => {
+        post.comments = comments.filter(comment => comment.postId === post.id);
+        return post;
+      });
+      if ( newsType === 'new' ) {
+        return allPosts.sort((a, b) => {
+         return a.createdAt > b.createdAt ? -1 : 1;
+        });
+      } else {
+        return allPosts;
+      }
+    })
   );
 
   constructor(private newsService: NewsService) {}
 
   ngOnInit(): void {
     this.newsService.initAllPosts();
+    this.newsService.initComments();
+  }
+
+
+  sendComment(text, userId, postId) {
+    this.newsService.sendComment({
+     text, postId, userId
+    }).subscribe(() => {
+      this.newsService.initComments();
+    });
+  }
+  trackByFn(index, card){
+    return card.id;
+  }
+
+  upVote(userId, postId) {
+    this.newsService.upVotePost(
+      postId, {id: userId}
+    ).subscribe(() => {
+      this.newsService.initAllPosts();
+    });
   }
 }
