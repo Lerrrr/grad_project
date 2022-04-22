@@ -8,41 +8,50 @@
   height: 25em;
   margin-top: 1em;
   border-radius: 0.3em;
-  overflow      : hidden;
-  text-overflow : ellipsis;
- 
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   &_header {
     padding: 0 12px 12px;
     &__title {
       padding: 12px 0 0;
-      
 
       h2 {
         font-size: 17px;
-        overflow      : hidden;
-        text-overflow : ellipsis;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
   }
 
-  &_communities-body{
-      display: flex;
-      flex-direction: column;
-      
-  }
-
-  &_communities{
+  &_communities-body {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-left: 1em;
-
-    button{
-      border-radius: 4em;
-      margin-right: 1em;
-      font-weight: bold;
+    flex-direction: column;
+    &__colorado{
+      display: flex;
+      flex-direction: row;
+      padding-left: 15px;
+    }
+    &__san{
+      display: flex;
+      flex-direction: row;
+      padding-left: 15px;
+    }
+    &__devils{
+      display: flex;
+      flex-direction: row;
+      padding-left: 15px;
+    }
+    &__van{
+      display: flex;
+      flex-direction: row;
+      padding-left: 15px;
     }
   }
 
+  &_communities {
+    display: flex;
+    //flex-direction: row;
+    margin-left: 1em;
+  }
 }

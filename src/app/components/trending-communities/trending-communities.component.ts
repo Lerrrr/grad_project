@@ -9,7 +9,8 @@ import { Component, OnInit, Input} from '@angular/core';
 
 export class TrendingCommunities implements OnInit {
   @Input() communitiesAvatar;
- 
+  @Input() communitiesName;
+
   constructor() { }
 
   ngOnInit(): void {

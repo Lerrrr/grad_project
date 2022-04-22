@@ -10,13 +10,19 @@
       <form
         (ngSubmit)="loginClickHandler(loginForm.value)"
         class="sign-modal_content__form"
-            [formGroup]="loginForm">
-        <h2 class="sign-modal_content__title">Log In</h2>
+        [formGroup]="loginForm"
+      >
+        <h2 class="sign-modal_content__title">Авторизация</h2>
         <ng-template #prefixTemplateEmail
           ><i nz-icon nzType="mail" nzTheme="outline"></i></ng-template
         ><br />
         <nz-input-group [nzPrefix]="prefixTemplateUser">
-          <input type="text" [formControlName]="'email'" nz-input placeholder="email" />
+          <input
+            type="text"
+            [formControlName]="'email'"
+            nz-input
+            placeholder="email"
+          />
         </nz-input-group>
         <ng-template #prefixTemplateUser
           ><i nz-icon nzType="user"></i></ng-template
@@ -37,12 +43,11 @@
           ></i> </ng-template
         ><br />
         <div class="content__form_button">
-          <button nz-button nzType="primary" type="submit">Log In</button>
+          <button nz-button nzType="primary" type="submit">Войти</button>
         </div>
       </form>
     </div>
   </ng-container>
-
 
   <ng-container *ngIf="state === 'sign-up'">
     <img class="sign-modal_background-photo" src="" />
@@ -57,7 +62,7 @@
         class="sign-modal_content__form"
         [formGroup]="signForm"
       >
-        <h2 class="sign-modal_content__title">Sign up</h2>
+        <h2 class="sign-modal_content__title">Регистрация</h2>
         <nz-input-group [nzPrefix]="prefixTemplateEmail">
           <input
             [formControlName]="'email'"
@@ -96,7 +101,9 @@
           ></i> </ng-template
         ><br />
         <div class="content__form_button">
-          <button nz-button nzType="primary" type="submit">Sign up</button>
+          <button nz-button nzType="primary" type="submit">
+            Зарегистрироваться
+          </button>
         </div>
       </form>
     </div>

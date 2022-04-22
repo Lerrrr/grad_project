@@ -2,9 +2,9 @@ const jwt = require('jsonwebtoken')
 const  bcrypt = require('bcrypt')
 const {User} = require('../models/schema')
 
-const generateJwt = (id, email, role) => {
+const generateJwt = (id, email, role, name) => {
   return jwt.sign(
-    {id, email, role},
+    {id, email, role, name},
     process.env.SECRET_KEY,
     {expiresIn: '24h'}
   )

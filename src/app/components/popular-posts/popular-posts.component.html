@@ -1,20 +1,20 @@
 <div class="popular-post-card">
-  <p class="popular-post-card_title">Popular posts</p>
+  <p class="popular-post-card_title">Популярные посты</p>
   <div class="popular-post-card_filter-panel">
-    <button nz-button nzType="{{type === 'hot' ? 'primary' : 'default'}}" (click)="typeChange.emit('hot')">
-      <i nz-icon nzType="coffee" nzTheme="outline"></i>Hot
+    <button
+      nz-button
+      nzType="{{ type === 'hot' ? 'primary' : 'default' }}"
+      (click)="typeChange.emit('hot')"
+    >
+      <i nz-icon nzType="coffee" nzTheme="outline"></i>Лучшие
     </button>
-    <button nz-button nzType="{{type === 'new' ? 'primary' : 'default'}}" (click)="typeChange.emit('new')">
-      <i nz-icon nzType="star" nzTheme="outline"></i>New
+    <button
+      nz-button
+      nzType="{{ type === 'new' ? 'primary' : 'default' }}"
+      (click)="typeChange.emit('new')"
+    >
+      <i nz-icon nzType="star" nzTheme="outline"></i>Новые
     </button>
-
   </div>
   <!-- <app-post-card></app-post-card> -->
-
 </div>
-
-
-
-
-
-

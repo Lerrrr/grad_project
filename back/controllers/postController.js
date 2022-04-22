@@ -24,7 +24,8 @@ class PostController {
 
     }
 
-    const device = await Post.create({heading, description, img: imgFilename, video: videoFilename, userName: req.user.name})
+    const device = await Post.create({heading, description, img: imgFilename,
+      video: videoFilename, userId: req.user.id})
 
     return res.json(device)
   }
@@ -42,7 +43,11 @@ class PostController {
   }
 
   async getAll(req, res) {
-    const posts = await Post.findAll({include: [{model: User, attributes: ['name']}]})
+    const posts = await Post.findAll({
+        include: [{model: User, attributes: ['name']},{
+        model: PostComment,
+        include: [{model: User, attributes: ['name']}]
+      }]})
     return res.json(posts)
   }
 

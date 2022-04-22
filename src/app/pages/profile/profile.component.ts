@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ProfileService} from './profile.service';
 import {NewsService} from '../news/news.service';
 import {Router} from '@angular/router';
+import {AuthService} from '../../global/auth.service';
 
 
 @Component({
@@ -11,7 +12,12 @@ import {Router} from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private profileService: ProfileService, private newsService: NewsService, private router: Router) { }
+  currentUser$ = this.auth.currentUser$;
+
+  constructor(private profileService: ProfileService,
+              private newsService: NewsService,
+              private router: Router,
+              private auth: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -21,5 +27,8 @@ export class ProfileComponent implements OnInit {
       this.newsService.initAllPosts();
       this.router.navigate(['news']);
     });
+  }
+  logoClickHandler() {
+    this.router.navigate(['news']);
   }
 }

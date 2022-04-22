@@ -53,6 +53,8 @@ export class AppComponent implements OnInit {
   logIn(body: any) {
     this.authService.logIn(body).subscribe((res: any) => {
       localStorage.setItem('id_token', res.token);
+      localStorage.setItem('userName', body.name);
+      console.log(body.name);
       this.authService.isLogged$.next(true);
       this.signModalState$.next(null);
     },

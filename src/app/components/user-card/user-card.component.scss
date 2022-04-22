@@ -18,6 +18,9 @@
 
     &__create-avatar{
       margin: 35px 10px;
+      img{
+        border-radius: 4em;
+      }
     }
     &__user-name{
       margin: 20px 15px;

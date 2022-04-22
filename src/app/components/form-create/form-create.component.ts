@@ -12,21 +12,11 @@ import {ChangeEvent} from '@ckeditor/ckeditor5-angular';
 export class FormCreateComponent implements OnInit {
   tabs = [
     {
-      name: 'Post',
+      name: 'Пост',
       icon: 'notification',
       id: 1
 
     },
-    {
-      name: 'Images & Video',
-      icon: 'picture',
-      id: 2
-    },
-    {
-      name: 'Link',
-      icon: 'link',
-      id: 3
-    }
   ];
   defaultFileList: NzUploadFile[] = [
     {
@@ -56,8 +46,20 @@ export class FormCreateComponent implements OnInit {
       'link',
       'bulletedList',
       'numberedList',
-      'blockQuote'
-    ]
+      'blockQuote',
+      'image'
+    ],
+    image: {
+      toolbar: [
+        'imageStyle:full',
+        'imageStyle:side',
+        '|',
+        'imageTextAlternative'
+      ],
+      upload: [
+        'png'
+      ]
+    }
   };
 
   @ViewChild('headingInput', {static: false}) headingInputEl: ElementRef;
@@ -86,3 +88,8 @@ export class FormCreateComponent implements OnInit {
     this.textareaValue$.next(data);
   }
 }
+
+
+
+
+

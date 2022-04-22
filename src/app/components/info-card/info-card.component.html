@@ -1,26 +1,23 @@
-<div class="info-card">
-    <div class="info-card-body">
-        <div class="info-card-body_left-column">
-            <a href="#">Help</a>
-            <a href="#">App</a>
-            <a href="#">About</a>
-            <a href="#">Topics</a>
-            <a href="#">Help</a>
-            <a href="#">App</a>
-            <a href="#">About</a>
-            <a href="#">Topics</a>
-        </div>
-        <div class="info-card-body_right-column">
-            <a href="#">Press</a>
-            <a href="#">Blog</a>
-            <a href="#">Trems</a>
-            <a href="#">Communities</a>
-            <a href="#">Press</a>
-            <a href="#">Blog</a>
-            <a href="#">Trems</a>
-            <a href="#">Communities</a>
-        </div>
-        
+<div class="info-card" *ngIf="isLogged">
+  <div
+    class="info-card_header"
+    [ngStyle]="{ backgroundImage: 'url(' + InfoBgImage + ')' }"
+  ></div>
+  <div class="info-card_body">
+    <div class="info-card_body__avatar">
+      <img
+        src="https://styles.redditmedia.com/t5_syi5j/styles/profileIcon_snoo127d4ffb-827a-42db-8546-9d437f369339-headshot.png?width=256&height=256&crop=256:256,smart&s=4528e77ae49c2333c3922a6aadeca5957e6d62d1"
+        width="80"
+        height="80"
+      />
     </div>
-   
+    <div class="info-card_body__title">
+      <h3>Главная страница</h3>
+    </div>
+  </div>
+  <p class="info-card_description">Это главная страница сайта.
+    Приходите сюда, чтобы поделиться интересной информацией из мира хоккея! </p>
+  <div class="info-card_create-button">
+    <button nz-button nzType="primary" nzBlock (click)="profileClick.emit()">Создать новость</button>
+  </div>
 </div>

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-user-card',
@@ -8,6 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class UserCardComponent implements OnInit {
   @Input() userBgImage;
   @Input() profileUserName;
+  @Output() logoClick = new EventEmitter();
 
   constructor() { }
 

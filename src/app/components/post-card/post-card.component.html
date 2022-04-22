@@ -1,16 +1,18 @@
 <div class="post-card">
   <div class="post-card__vote-column">
-    <div class="post-card__vote-column_up-button">
+    <div class="post-card__vote-column_up-button post-card__vote-column_button-up">
       <button nz-button nzType="text" nzBlock (click)="upVoteClick.emit()">
-      <i nz-icon nzType="arrow-up" nzTheme="outline"></i>
+        <i nz-icon nzType="arrow-up" nzTheme="outline"></i>
       </button>
     </div>
     <div class="post-card__vote-column_counter">
       <p>{{ rate }}</p>
     </div>
-    <div class="post-card__vote-column_down-button">
-      <button nz-button nzType="text" nzBlock>
-      <i nz-icon nzType="arrow-down" nzTheme="outline"></i>
+    <div
+      class="post-card__vote-column_down-button post-card__vote-column_button-down"
+    >
+      <button nz-button nzType="text" nzBlock (click)="downVoteClick.emit()">
+        <i nz-icon nzType="arrow-down" nzTheme="outline"></i>
       </button>
     </div>
   </div>
@@ -18,19 +20,13 @@
     <div class="post-card__top-bar">
       <div class="post-card__top-bar__user">
         <div class="post-card__top-bar__user_avatar">
-          <img
-            src="https://img.icons8.com/bubbles/2x/reddit.png"
-            width="30"
-            height="30"
-          />
+          <nz-avatar
+            nzIcon="user"
+            nzSrc="https://styles.redditmedia.com/t5_2w0zz/styles/communityIcon_9sx17igeqhm11.png?width=256&s=9effc04d08e0a21294d9539842e62a6a9118f5d6"
+          ></nz-avatar>
         </div>
-        <p class="post-card__top-bar__user_name">
-          {{ userName }}
-        </p>
+        <p class="post-card__top-bar__user_name">u/{{ userName }}</p>
       </div>
-      <!--      <div class="post-card__top-bar_join-button">-->
-      <!--        <button nz-button nzType="primary">+ Join</button>-->
-      <!--      </div>-->
     </div>
 
     <div class="post-card__body">
@@ -53,64 +49,65 @@
     </div>
 
     <div class="post-card__footer">
-      <div class="post-card__footer_comment-button">
-
-        <i nz-icon nzType="comment" nzTheme="outline"></i> Comments
-
+      <div
+        class="post-card__footer_comment-button"
+        (click)="isCommentsBlock = !isCommentsBlock"
+      >
+        <i nz-icon nzType="comment" nzTheme="outline"></i> Комментарии
       </div>
     </div>
     <div class="post-card__footer_body-comment">
-    <nz-list
-      *ngIf="comments?.length"
-      [nzDataSource]="comments"
-      [nzRenderItem]="item"
-      [nzItemLayout]="'horizontal'"
-    >
-      <ng-template #item let-item>
-        <nz-comment
-          [nzAuthor]="item.userId"
-          [nzDatetime]="item.createdAt | date: 'mediumDate'"
+      <ng-container *ngIf="isCommentsBlock">
+        <nz-list
+          *ngIf="comments?.length"
+          [nzDataSource]="comments"
+          [nzRenderItem]="item"
+          [nzItemLayout]="'horizontal'"
         >
+          <ng-template #item let-item>
+            <nz-comment
+              [nzAuthor]="item.user?.name"
+              [nzDatetime]="item.createdAt | date: 'medium'"
+            >
+              <nz-avatar
+                nz-comment-avatar
+                nzIcon="user"
+                nzSrc="https://styles.redditmedia.com/t5_2w0zz/styles/communityIcon_9sx17igeqhm11.png?width=256&s=9effc04d08e0a21294d9539842e62a6a9118f5d6"
+              ></nz-avatar>
+              <nz-comment-content>
+                <p>{{ item.text }}</p>
+              </nz-comment-content>
+            </nz-comment>
+          </ng-template>
+        </nz-list>
+        <nz-comment>
           <nz-avatar
             nz-comment-avatar
             nzIcon="user"
-            [nzSrc]="item.avatar"
+            nzSrc="https://styles.redditmedia.com/t5_2w0zz/styles/communityIcon_9sx17igeqhm11.png?width=256&s=9effc04d08e0a21294d9539842e62a6a9118f5d6"
           ></nz-avatar>
           <nz-comment-content>
-            <p>{{ item.text }}</p>
+            <nz-form-item>
+              <textarea [(ngModel)]="inputValue" nz-input rows="4"></textarea>
+            </nz-form-item>
+            <nz-form-item>
+              <div class="post-card__footer_body-comment_addButton">
+                <button
+                  nz-button
+                  nzType="primary"
+                  [disabled]="!inputValue || !isLogged"
+                  (click)="handleSubmit()"
+                >
+                  Add Comment
+                </button>
+              </div>
+            </nz-form-item>
           </nz-comment-content>
         </nz-comment>
-      </ng-template>
-    </nz-list>
-    <nz-comment>
-      <nz-avatar
-        nz-comment-avatar
-        nzIcon="user"
-        [nzSrc]="userAvatar"
-      ></nz-avatar>
-      <nz-comment-content>
-        <nz-form-item>
-          <textarea [(ngModel)]="inputValue" nz-input rows="4"></textarea>
-        </nz-form-item>
-        <nz-form-item>
-          <div class="post-card__footer_body-comment_addButton">
-          <button
-            nz-button
-            nzType="primary"
-            [disabled]="!inputValue"
-            (click)="handleSubmit()"
-          >
-            Add Comment
-          </button></div>
-        </nz-form-item>
-      </nz-comment-content>
-    </nz-comment>
+      </ng-container>
     </div>
   </div>
 </div>
-
-
-
 
 <!--      <div class="post-card__footer_share-button">-->
 <!--          <i nz-icon nzType="share-alt" nzTheme="outline"></i> Share-->

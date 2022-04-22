@@ -14,10 +14,15 @@ export class PostCardComponent implements OnInit {
   @Input() image;
   @Input() video;
   @Input() comments;
+  @Input() isLogged;
   @Output() addComment = new EventEmitter();
   @Output() upVoteClick = new EventEmitter();
+  @Output() downVoteClick = new EventEmitter();
+
 
   inputValue = '';
+
+  isCommentsBlock = false;
 
   constructor() {}
 
@@ -26,5 +31,9 @@ export class PostCardComponent implements OnInit {
   handleSubmit() {
    this.addComment.emit(this.inputValue);
    this.inputValue = '';
+  }
+
+  fakeVote(value: string) {
+  //   this.rate = value === 'up' ? this.rate + 1 : this.rate - 1;
   }
 }

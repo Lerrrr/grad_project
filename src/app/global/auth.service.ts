@@ -9,6 +9,7 @@ import {BehaviorSubject} from 'rxjs';
 export class AuthService {
 
   isLogged$ = new BehaviorSubject(false);
+  currentUser$ = new BehaviorSubject('');
 
   constructor(private http: HttpClient) {
   }

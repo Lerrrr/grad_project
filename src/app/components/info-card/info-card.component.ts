@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-info-card',
@@ -7,9 +7,10 @@ import { Component, OnInit, Input} from '@angular/core';
 })
 
 export class InfoCardComponent implements OnInit {
-  
-  
- 
+  @Input() InfoBgImage;
+  @Output() profileClick = new EventEmitter();
+  @Input() isLogged;
+
   constructor() { }
 
   ngOnInit(): void {

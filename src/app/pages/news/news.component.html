@@ -1,7 +1,8 @@
 <div
   *init="{
     allPosts: allPosts$ | async,
-    newsType: selectedNewsType$ | async
+    newsType: selectedNewsType$ | async,
+    isLogged: isLogged$ | async
   } as params"
   class="news"
 >
@@ -18,13 +19,15 @@
         *ngFor="let card of params.allPosts; trackBy: trackByFn"
         [heading]="card.heading"
         [description]="card.description"
-        [userName]="card.user.name"
+        [userName]="card.user?.name"
         [rate]="card.rating"
         [image]="card.img"
         [video]="card.video"
-        [comments]="card.comments"
+        [comments]="card.post_comments"
         (addComment)="sendComment($event, card.userId, card.id)"
-        (upVoteClick)="upVote(card.userId, card.id)"
+        (upVoteClick)="upVote(card.userId, card.id, params.allPosts)"
+        (downVoteClick)="downVote(card.userId, card.id, params.allPosts)"
+        [isLogged]="params.isLogged"
       ></app-post-card>
     </div>
     <div class="news__side-panel">
@@ -37,8 +40,14 @@
       <app-trending-communities
         *ngFor="let community of communities"
         [communitiesAvatar]="community.communitiesAvatar"
+        [communitiesName]="community.communitiesName"
       ></app-trending-communities>
-      <app-info-card></app-info-card>
+      <app-info-card
+        *ngFor="let info of inform"
+        [InfoBgImage]="info.InfoBgImage"
+        (profileClick)="goToProfile()"
+        [isLogged]="params.isLogged"
+      ></app-info-card>
     </div>
   </div>
 </div>

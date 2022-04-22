@@ -9,6 +9,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 
 import { IconDefinition } from '@ant-design/icons-angular';
 import { NZ_ICONS } from 'ng-zorro-antd/icon';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 
 import * as AllIcons from '@ant-design/icons-angular/icons';
 import { CommonModule } from '@angular/common';
@@ -53,6 +54,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(
     ProfileModule,
     HttpClientModule,
     NgxfModule,
+    NzAvatarModule
   ],
   providers: [
     { provide: NZ_ICONS, useValue: icons },

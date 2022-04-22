@@ -3,7 +3,7 @@
     class="top-news-card_header"
     [ngStyle]="{ backgroundImage: 'url(' + headerBgImage + ')' }"
   >
-    <h2 class="top-news-card_header__title">Top News Communities</h2>
+    <h2 class="top-news-card_header__title">Лучшие хоккейные сообщества</h2>
   </div>
   <ol *ngIf="news.length">
     <li *ngFor="let row of news; let i = index">
@@ -13,27 +13,18 @@
           <img src="{{ row.avatar }}" width="25" height="25" >
         </div>
         <p class="top-news-card__row_title">
-         {{ row.title }} 
+         {{ row.title }}
         </p>
       </div>
     </li>
   </ol>
 
   <div class="top-news-card_view-button">
-    <button nz-button nzType="primary" nzBlock>View All</button>
+<!--    <button nz-button nzType="primary" nzBlock>Посмотреть все</button>-->
   </div>
-  <div class="top-news-card_footer-button">
-    <span class="top-news-card_footer-button">
-      <button nz-button nzType="default">Top</button>
-    </span>
-    <span class="top-news-card_footer-button">
-      <button nz-button nzType="default">Sports</button>
-    </span>
-    <span class="top-news-card_footer-button">
-      <button nz-button nzType="default">Health</button>
-    </span>
+
     <!-- <span class="top-news-card_other-button">
       <button nz-button nzType="default">Game</button>
     </span> -->
   </div>
-</div>
+

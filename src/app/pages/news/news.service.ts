@@ -10,6 +10,7 @@ export interface PostDto {
   description: string;
   img?: string;
   video?: string;
+
 }
 
 export interface Comment {
@@ -58,17 +59,8 @@ export class NewsService {
   }
 
   fetchComments() {
-    // return of([
-    //   {
-    //     id: 1,
-    //     text: 'commtn',
-    //     postId: 18,
-    //     userId: 5,
-    //     createdAt: ' 20 May 21',
-    //     updatedAt: ' 20 May 21'
-    //   }
-    // ]);
-    return this.http.get('http://localhost:4000/api/post/comment/') as Observable<any[]>;
+    return this.http.get('http://localhost:4000/api/post/comment/post') as Observable<any[]>;
+
   }
 
 
@@ -83,7 +75,13 @@ export class NewsService {
   upVotePost( postId, user: {
     id: number;
   }) {
-    return this.http.post(`http://localhost:4000/api/post/rate/up/${postId}`, {user});
+    return this.http.put(`http://localhost:4000/api/post/rate/up/${postId}`, {user});
+  }
+
+  downVotePost( postId, user: {
+    id: number;
+  }) {
+    return this.http.put(`http://localhost:4000/api/post/rate/down/${postId}`, {user});
   }
 
 }
